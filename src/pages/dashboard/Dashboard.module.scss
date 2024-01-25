@@ -1,0 +1,21 @@
+/*
+ * ---------------------------------------------
+ * Author: Isaac Mirabueno
+ * Date: Thursday January 25th 2024
+ * Last Modified by: Isaac Mirabueno - <imirabueno@yondu.com>
+ * Last Modified time: January 25th 2024, 4:57:42 pm
+ * ---------------------------------------------
+ */
+ 
+ .topCardsContainer {
+  display: grid;
+  grid-template-columns: 1fr;
+
+  @media screen and (min-width: 768px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.dataCard {
+  padding: 20px;
+}

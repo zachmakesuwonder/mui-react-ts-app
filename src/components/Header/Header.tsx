@@ -3,7 +3,7 @@
  * Author: Isaac Mirabueno
  * Date: Thursday January 25th 2024
  * Last Modified by: Isaac Mirabueno - <imirabueno@yondu.com>
- * Last Modified time: January 25th 2024, 3:10:12 pm
+ * Last Modified time: January 25th 2024, 4:55:17 pm
  * ---------------------------------------------
  */
 
@@ -23,6 +23,7 @@ import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import { Avatar } from "@mui/material";
 import { useSession, signIn, signOut} from "next-auth/react"
+import ThemeToggleButton from "@/components/ThemeToggleButton";
 
 const pages = ['Products', 'Pricing', 'Blog'];
 interface HeaderMenu { 
@@ -30,7 +31,13 @@ interface HeaderMenu {
   callback(): any;
 }
   
-const Header = () => {
+export type HeaderProps = {
+  ColorModeContext: React.Context<{ toggleColorMode: () => void; }>,
+}
+
+const Header = (props: HeaderProps) => {
+  const { ColorModeContext } = props;
+  
   const settings: HeaderMenu[] = [
     {
       title: 'Profile',
@@ -91,7 +98,7 @@ const Header = () => {
               textDecoration: 'none',
             }}
           >
-            LOGO
+            DataSoft
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -161,10 +168,10 @@ const Header = () => {
             ))}
           </Box>
 
-          
+          <ThemeToggleButton ColorModeContext={ColorModeContext}/>
           <Box sx={{ flexGrow: 0, display: "flex", alignItems: "center"}}>
             {session ? <>
-              <Typography textAlign="center" sx={{paddingRight: 5}}>Hi! {userName}</Typography>
+              <Typography textAlign="center" sx={{paddingRight: 5, display: { sm: 'none', md: "flex" } }}>Hi! {userName}</Typography>
               <Tooltip title="Open settings">
                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                   <Avatar alt={userName} src={userProfileImg} />

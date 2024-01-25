@@ -3,18 +3,16 @@
  * Author: Isaac Mirabueno
  * Date: Thursday January 25th 2024
  * Last Modified by: Isaac Mirabueno - <imirabueno@yondu.com>
- * Last Modified time: January 25th 2024, 6:06:40 pm
+ * Last Modified time: January 25th 2024, 7:54:27 pm
  * ---------------------------------------------
  */
 
 
  .layout {
-  padding: 0 24px 0 80px;
   max-width: 85rem;
   margin: auto;
 
   @media screen and (min-width: 1700px) {
-    padding: 0 24px 0 0;
     max-width: 92rem;
   }
 }

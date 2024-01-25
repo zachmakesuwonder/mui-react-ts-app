@@ -3,7 +3,7 @@
  * Author: Isaac Mirabueno
  * Date: Wednesday January 24th 2024
  * Last Modified by: Isaac Mirabueno - <imirabueno@yondu.com>
- * Last Modified time: January 25th 2024, 1:32:44 pm
+ * Last Modified time: January 25th 2024, 7:28:56 pm
  * ---------------------------------------------
  */
 
@@ -25,8 +25,8 @@ export const authOptions: NextAuthOptions = {
     //   clientSecret: process.env.FACEBOOK_SECRET
     // }),
     GoogleProvider({
-      clientId: process.env.GOOGLE_ID,
-      clientSecret: process.env.GOOGLE_SECRET,
+      clientId: process.env.GOOGLE_ID as string,
+      clientSecret: process.env.GOOGLE_SECRET as string,
       authorization: {
         params: {
           prompt: "consent",

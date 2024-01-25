@@ -1,7 +1,7 @@
 import Dashboard from "./dashboard";
 
 import { useSession } from "next-auth/react"
-import Login from "@/components/login";
+import Login from "@/components/Login";
 import classes from './Home.module.scss'
 import React from 'react';
 

@@ -3,11 +3,12 @@
  * Author: Isaac Mirabueno
  * Date: Thursday January 25th 2024
  * Last Modified by: Isaac Mirabueno - <imirabueno@yondu.com>
- * Last Modified time: January 25th 2024, 6:07:24 pm
+ * Last Modified time: January 25th 2024, 8:33:17 pm
  * ---------------------------------------------
  */
 
 import SideMenu from "@/components/SideMenu";
+import Footer from "@/components/Footer";
 import scss from "./Layout.module.scss";
 import { useSession } from "next-auth/react";
 import React from "react";
@@ -24,9 +25,13 @@ const Layout = (props: any) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={scss.layout}>
+      <main
+        className={scss.layout}
+        style={{ padding: session ? "0 24px 0 80px" : 0 }}
+      >
         {session && <SideMenu />}
         {props.children}
+        <Footer />
       </main>
     </>
   );

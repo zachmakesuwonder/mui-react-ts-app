@@ -1,6 +1,5 @@
 import React from "react";
 
-import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import { SessionProvider } from "next-auth/react"
 import { CssBaseline } from "@mui/material";
@@ -42,18 +41,21 @@ const App: React.FC<AppProps> = ({ Component, pageProps: { session, ...pageProps
       [mode],
   )
 
-  return (<ColorModeContext.Provider value={colorMode}>
-            <ThemeProvider theme={mode === 'dark' ? darkThemeChosen : lightThemeChosen}>
-      <SessionProvider session={session}>
-                <CssBaseline />
-                <Header ColorModeContext={ColorModeContext}/>
-                <Layout>
-                    <Component {...pageProps} />
-                </Layout>
-              </SessionProvider>
-            </ThemeProvider>
-          </ColorModeContext.Provider>
-  )
+  return (
+    <ColorModeContext.Provider value={colorMode}>
+      <ThemeProvider
+        theme={mode === "dark" ? darkThemeChosen : lightThemeChosen}
+      >
+        <SessionProvider session={session}>
+          <CssBaseline />
+          <Header ColorModeContext={ColorModeContext} />
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </SessionProvider>
+      </ThemeProvider>
+    </ColorModeContext.Provider>
+  );
 }
 
 export default App;

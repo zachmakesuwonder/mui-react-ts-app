@@ -3,7 +3,7 @@
  * Author: Isaac Mirabueno
  * Date: Wednesday January 24th 2024
  * Last Modified by: Isaac Mirabueno - <imirabueno@yondu.com>
- * Last Modified time: January 25th 2024, 5:49:48 pm
+ * Last Modified time: January 25th 2024, 8:51:33 pm
  * ---------------------------------------------
  */
 
@@ -14,7 +14,6 @@ import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import ExitToAppIcon from "@mui/icons-material/ExitToApp";
 import Person2Icon from "@mui/icons-material/Person2";
-import HomeIcon from "@mui/icons-material/Home";
 import EqualizerIcon from "@mui/icons-material/Equalizer";
 import { Settings } from "@mui/icons-material";
 import NextLink from "next/link";
@@ -87,7 +86,7 @@ const SideMenu = () => {
       open={open}
       className={scss.sideMenu}
       sx={{
-        width: drawerWidth,
+        width: 240,
         [`& .MuiDrawer-paper`]: {
           left: 0,
           top: mobileCheck ? 64 : 57,

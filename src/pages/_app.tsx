@@ -8,6 +8,7 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 import darkTheme from "@/styles/theme/darkTheme";
 import lightTheme from "@/styles/theme/lightTheme";
 import Header from "@/components/Header";
+import Layout from "@/components/Layout";
 
 
 const ColorModeContext = React.createContext({
@@ -46,7 +47,9 @@ const App: React.FC<AppProps> = ({ Component, pageProps: { session, ...pageProps
       <SessionProvider session={session}>
                 <CssBaseline />
                 <Header ColorModeContext={ColorModeContext}/>
-                <Component {...pageProps} />
+                <Layout>
+                    <Component {...pageProps} />
+                </Layout>
               </SessionProvider>
             </ThemeProvider>
           </ColorModeContext.Provider>
